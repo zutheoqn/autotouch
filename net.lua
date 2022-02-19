@@ -2,6 +2,7 @@
 --soucre https://github.com/zutheoqn/autotouch.git
 local xoainfo = "com.ienthach.XoaInfo" ;
 local url_net = "http://alltimemobile.com/lists/?key=92069&aff_id=76541&agent=ios";
+local adgem_location_x,adgem_location_y,adgem_location_color = 120, 628, 10921638;
 function ssleep(s)
       sc = s * 1000000 ;
       usleep(sc);
@@ -29,16 +30,23 @@ function _openURL(url)
       openURL(url);
       ssleep(3);
 end
-function click_adgem()
+function _clickOncheck(x,y,Color)
       local stop_loop = false;
       repeat
-            if getColor(120, 628) == 10921638 then
-                usleep(1000000);
-                tap(120, 628);
+            if getColor(x, y) == Color then
+                ssleep(1);
+                tap(x, y);
                 stop_loop = true;
             else
-                  toast("click_adgem", 1);
+                  toast("_clickOncheck", 1);
                   ssleep(1);
             end
       until(stop_loop)
 end
+
+_clearDB();
+ssleep(2);
+_openURL(url_net);
+ssleep(2);
+_clickOncheck(adgem_location_x,adgem_location_y,adgem_location_color);
+ssleep(2);
