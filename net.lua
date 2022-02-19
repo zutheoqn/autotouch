@@ -1,5 +1,5 @@
 --ver 1.0
---soucre 
+--soucre https://github.com/zutheoqn/autotouch.git
 local xoainfo = "com.ienthach.XoaInfo" ;
 local url_net = "http://alltimemobile.com/lists/?key=92069&aff_id=76541&agent=ios";
 function ssleep(s)
