@@ -50,7 +50,7 @@ function _clickOncheck(x,y,Color)
             end
       until(stop_loop)
 end
-function sleepApp(app,x,y)
+function _sleepApp(app,x,y)
       ssleep(1);
       appRun(app);
       ssleep(3);
@@ -78,10 +78,10 @@ ssleep(2);
 repeat
       if appState(app_key_open) == "ACTIVATED" then
             ssleep(2);
-            sleepApp(app_1,app_1_loc_x,app_1_loc_y);
-            sleepApp(app_2,app_2_loc_x,app_2_loc_y);
-            sleepApp(app_3,app_3_loc_x,app_3_loc_y);
-            sleepApp(app_4,app_4_loc_x,app_4_loc_y);
+            _sleepApp(app_1,app_1_loc_x,app_1_loc_y);
+            _sleepApp(app_2,app_2_loc_x,app_2_loc_y);
+            _sleepApp(app_3,app_3_loc_x,app_3_loc_y);
+            _sleepApp(app_4,app_4_loc_x,app_4_loc_y);
             stop_loop_openApp = true;
       end
 until stop_loop_openApp
